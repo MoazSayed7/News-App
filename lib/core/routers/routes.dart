@@ -7,7 +7,7 @@ class AppRouter {
   Route? generateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case Routes.homeScreen:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
+        return MaterialPageRoute(builder: (_) => HomeScreen());
 
       default:
         return null;
