@@ -20,7 +20,6 @@ class NewsApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'News App',
-          theme: ThemeData(primarySwatch: Colors.blue),
           themeMode: ThemeMode.dark,
           initialRoute: Routes.homeScreen,
           onGenerateRoute: appRouter.generateRoute,
