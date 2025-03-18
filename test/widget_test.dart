@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:news_app_offline/core/routers/routes.dart';
+import 'package:news_app_offline/core/routers/app_router.dart';
 
 import 'package:news_app_offline/news_app.dart';
 

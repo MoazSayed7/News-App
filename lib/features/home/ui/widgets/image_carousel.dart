@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -77,10 +78,17 @@ class _CarouselSliderPageState extends State<CarouselSliderPage> {
                             child: Transform.flip(
                               filterQuality: FilterQuality.high,
                               flipX: true,
-                              child: Image.network(
-                                imageUrl,
+                              child: CachedNetworkImage(
+                                imageUrl: imageUrl,
                                 fit: BoxFit.cover,
                                 filterQuality: FilterQuality.high,
+                                progressIndicatorBuilder:
+                                    (context, url, downloadProgress) =>
+                                        CircularProgressIndicator(
+                                          value: downloadProgress.progress,
+                                        ),
+                                errorWidget:
+                                    (context, url, error) => Icon(Icons.error),
                               ),
                             ),
                           ),

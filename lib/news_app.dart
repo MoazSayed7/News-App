@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/routers/app_router.dart';
 import 'core/routers/routes.dart';
+import 'core/theme/colors.dart';
 
 class NewsApp extends StatelessWidget {
   final AppRouter appRouter;
@@ -22,6 +23,11 @@ class NewsApp extends StatelessWidget {
           title: 'News App',
           themeMode: ThemeMode.dark,
           initialRoute: Routes.homeScreen,
+          theme: ThemeData(
+            progressIndicatorTheme: ProgressIndicatorThemeData(
+              color: ColorsManager.limePastel
+            )
+          ),
           onGenerateRoute: appRouter.generateRoute,
         );
       },

@@ -13,8 +13,7 @@ import 'widgets/vertical_card.dart';
 class HomeScreen extends StatelessWidget {
   final data = [
     {
-      'image':
-          'https://images.unsplash.com/photo-1611262084470-0e8686d7be78?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'image': 'https://images.unsplash.com/photo-1611262084470-0e8686d7be78',
       'desc': 'The 12 most intriguing animal discoveries of 2021',
     },
     {
