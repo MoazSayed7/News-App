@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -27,11 +28,17 @@ class TopHeader extends StatelessWidget {
             shape: BoxShape.circle,
           ),
           child: ClipOval(
-            child: Image.network(
-              'https://avatars.githubusercontent.com/u/75115429?v=4',
+            child: CachedNetworkImage(
+              imageUrl: 'https://avatars.githubusercontent.com/u/75115429?v=4',
               width: 42.w,
               height: 42.h,
+              filterQuality: FilterQuality.high,
               fit: BoxFit.cover,
+              progressIndicatorBuilder:
+                  (context, url, downloadProgress) => CircularProgressIndicator(
+                    value: downloadProgress.progress,
+                  ),
+              errorWidget: (context, url, error) => Icon(Icons.error),
             ),
           ),
         ),

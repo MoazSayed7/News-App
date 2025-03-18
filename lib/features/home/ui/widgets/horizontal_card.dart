@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -40,10 +41,16 @@ class CustomHorizontalCard extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(10.r)),
             ),
             clipBehavior: Clip.antiAlias,
-            child: Image.network(
-              'https://images.unsplash.com/photo-1500467525088-aafe28c0a95e?q=80&w=1838&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            child: CachedNetworkImage(
+              imageUrl:
+                  'https://images.unsplash.com/photo-1500467525088-aafe28c0a95e',
               fit: BoxFit.cover,
               filterQuality: FilterQuality.high,
+              progressIndicatorBuilder:
+                  (context, url, downloadProgress) => CircularProgressIndicator(
+                    value: downloadProgress.progress,
+                  ),
+              errorWidget: (context, url, error) => Icon(Icons.error),
             ),
           ),
           Container(

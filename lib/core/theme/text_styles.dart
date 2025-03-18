@@ -11,6 +11,16 @@ class TextStyles {
     fontWeight: FontWeightHelper.semiBold,
     color: Colors.white,
   );
+  static TextStyle font24WhiteBoldNunitoSans = GoogleFonts.nunitoSans(
+    fontSize: 24.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: Colors.white,
+  );
+  static TextStyle font10WarmAmberSemiBoldNunitoSans = GoogleFonts.nunitoSans(
+    fontSize: 10.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsManager.warmAmber,
+  );
   static TextStyle font6WhiteSemiBoldNunitoSans = GoogleFonts.nunitoSans(
     fontSize: 6.31.sp,
     fontWeight: FontWeightHelper.semiBold,
@@ -19,6 +29,11 @@ class TextStyles {
   static TextStyle font9WhiteSemiBoldNunitoSans = GoogleFonts.nunitoSans(
     fontSize: 9.31.sp,
     fontWeight: FontWeightHelper.semiBold,
+    color: Colors.white,
+  );
+  static TextStyle font10WhiteLightNunitoSans = GoogleFonts.nunitoSans(
+    fontSize: 10.sp,
+    fontWeight: FontWeightHelper.light,
     color: Colors.white,
   );
   static TextStyle font11GrayStoneRegularNunitoSans = GoogleFonts.nunitoSans(
@@ -30,6 +45,16 @@ class TextStyles {
     fontSize: 10.69.sp,
     fontWeight: FontWeightHelper.regular,
     color: ColorsManager.limePastel,
+  );
+  static TextStyle font12LimePastelBoldNunitoSans = GoogleFonts.nunitoSans(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: ColorsManager.limePastel,
+  );
+  static TextStyle font12AshGrayRegularNunitoSans = GoogleFonts.nunitoSans(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.ashGray,
   );
   static TextStyle font13WhiteBoldPoppins = GoogleFonts.poppins(
     fontSize: 13.46.sp,
@@ -50,5 +75,10 @@ class TextStyles {
     fontSize: 10.61.sp,
     fontWeight: FontWeightHelper.regular,
     color: Colors.white,
+  );
+  static TextStyle font12SoftSageRegularPoppins = GoogleFonts.poppins(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.softSage,
   );
 }

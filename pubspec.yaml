@@ -9,11 +9,13 @@ environment:
   sdk: ^3.7.2
 
 dependencies:
+  cached_network_image: ^3.4.1
   carousel_slider: ^5.0.0
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.9.3
+  flutter_svg: ^2.0.17
   google_fonts: ^6.2.1
   smooth_page_indicator: ^1.2.1
 
@@ -24,3 +26,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/svgs/
