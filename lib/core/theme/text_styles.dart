@@ -66,6 +66,16 @@ class TextStyles {
     fontWeight: FontWeightHelper.bold,
     color: Colors.white,
   );
+  static TextStyle font28PureSnowSemiBoldPoppins = GoogleFonts.poppins(
+    fontSize: 28.84.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsManager.pureSnow,
+  );
+  static TextStyle font13SilverGrayLightPoppins = GoogleFonts.poppins(
+    fontSize: 13.46.sp,
+    fontWeight: FontWeightHelper.light,
+    color: ColorsManager.silverGray,
+  );
   static TextStyle font12WhiteMediumPoppins = GoogleFonts.poppins(
     fontSize: 12.61.sp,
     fontWeight: FontWeightHelper.medium,

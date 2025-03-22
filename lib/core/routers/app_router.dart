@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../features/details/ui/details_screen.dart';
 
+import '../../features/details/ui/details_screen.dart';
 import '../../features/home/ui/home_screen.dart';
+import '../../features/onBoarding/ui/onboarding_screen.dart';
 import 'routes.dart';
 
 class AppRouter {
@@ -9,8 +10,12 @@ class AppRouter {
     switch (routeSettings.name) {
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (_) => HomeScreen());
+
       case Routes.detailsScreen:
         return MaterialPageRoute(builder: (_) => DetailsScreen());
+
+      case Routes.onBoardingScreen:
+        return MaterialPageRoute(builder: (_) => OnBoardingScreen());
 
       default:
         return null;

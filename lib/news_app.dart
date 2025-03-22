@@ -22,11 +22,12 @@ class NewsApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'News App',
           themeMode: ThemeMode.dark,
-          initialRoute: Routes.homeScreen,
+          initialRoute: Routes.onBoardingScreen,
           theme: ThemeData(
+            scaffoldBackgroundColor: ColorsManager.deepOliveBlack,
             progressIndicatorTheme: ProgressIndicatorThemeData(
-              color: ColorsManager.limePastel
-            )
+              color: ColorsManager.limePastel,
+            ),
           ),
           onGenerateRoute: appRouter.generateRoute,
         );

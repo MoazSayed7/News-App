@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/text_styles.dart';
+import '../../../../core/widgets/pagination_dots.dart';
 
 class CarouselSliderPage extends StatefulWidget {
   const CarouselSliderPage({super.key});
@@ -151,23 +152,9 @@ class _CarouselSliderPageState extends State<CarouselSliderPage> {
           bottom: 10.58.h,
           left: 0.w,
           right: 0.w,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children:
-                imageList.asMap().entries.map((entry) {
-                  return Container(
-                    width: _currentIndex == entry.key ? 9.61.w : 5.77.w,
-                    height: _currentIndex == entry.key ? 9.61.h : 5.77.h,
-                    margin: EdgeInsets.symmetric(horizontal: 4.w),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color:
-                          _currentIndex == entry.key
-                              ? ColorsManager.limePastel
-                              : ColorsManager.graniteGray,
-                    ),
-                  );
-                }).toList(),
+          child: CustomPaginationDots(
+            currentIndex: _currentIndex,
+            list: imageList,
           ),
         ),
       ],
