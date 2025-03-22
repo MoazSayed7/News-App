@@ -18,4 +18,6 @@ class ColorsManager {
   static const Color warmAmber = Color(0xFFFEC158);
   static const Color ashGray = Color(0xFFB3B3B3);
   static const Color softSage = Color(0xFFD9DAD3);
+  static const Color pureSnow = Color(0xFFFBFCFF);
+  static const Color darkGraphite = Color(0xFF2F2F2E);
 }
