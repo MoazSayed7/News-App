@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/helpers/spacing.dart';
 import '../../../core/widgets/section_header.dart';
 import 'widgets/banners/banners_bloc_builder.dart';
+import 'widgets/categories/categories_bloc_builder.dart';
 import 'widgets/horizontal_card.dart';
-import 'widgets/tap_bar.dart';
 import 'widgets/top_header.dart';
 import 'widgets/vertical_card.dart';
 
@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
               verticalSpace(28.22),
               BannersBlocBuilder(),
               verticalSpace(32.7),
-              ExactTabBar(),
+              CategoriesBlocBuilder(),
               verticalSpace(16.34),
               SectionHeader(
                 title: 'Recommended Article',
