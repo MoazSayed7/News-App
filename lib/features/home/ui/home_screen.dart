@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/helpers/spacing.dart';
-import '../../../core/theme/colors.dart';
 import '../../../core/widgets/section_header.dart';
+import 'widgets/banners/banners_bloc_builder.dart';
 import 'widgets/horizontal_card.dart';
-import 'widgets/image_carousel.dart';
 import 'widgets/tap_bar.dart';
 import 'widgets/top_header.dart';
 import 'widgets/vertical_card.dart';
@@ -33,7 +32,7 @@ class HomeScreen extends StatelessWidget {
             children: [
               TopHeader(),
               verticalSpace(28.22),
-              CarouselSliderPage(),
+              BannersBlocBuilder(),
               verticalSpace(32.7),
               ExactTabBar(),
               verticalSpace(16.34),

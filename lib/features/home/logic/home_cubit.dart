@@ -1,0 +1,27 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../data/repos/home_repo.dart';
+
+import 'home_state.dart';
+
+class HomeCubit extends Cubit<HomeState> {
+  final HomeRepo _homeRepo;
+  HomeCubit(this._homeRepo) : super(const HomeState.initial());
+
+  void getBanners() async {
+    emit(const HomeState.bannersLoading());
+    final response = await _homeRepo.getBanners();
+    try {
+      response.when(
+        success: (bannerResponseModel) {
+          emit(HomeState.bannersSuccess(bannerResponseModel));
+        },
+        failure: (error) {
+          emit(HomeState.bannersError(error.toString()));
+        },
+      );
+    } catch (error) {
+      emit(HomeState.bannersError(error.toString()));
+    }
+  }
+}
