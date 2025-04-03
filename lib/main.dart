@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'core/assets/svg_assets.dart';
+import 'core/di/dependency_injection.dart';
+import 'core/helpers/bloc_observer.dart';
 import 'core/routers/app_router.dart';
 import 'news_app.dart';
 
@@ -12,7 +15,9 @@ Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
   );
+  Bloc.observer = MyBlocObserver();
   await Future.wait([
+    setupGetIt(),
     SystemChrome.setPreferredOrientations(<DeviceOrientation>[
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
