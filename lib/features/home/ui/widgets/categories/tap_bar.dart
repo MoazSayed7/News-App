@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/theme/colors.dart';
-import '../../../../core/theme/text_styles.dart';
+import '../../../../../core/theme/colors.dart';
+import '../../../../../core/theme/text_styles.dart';
+import '../../../data/models/categories_response_model.dart';
 
 class ExactTabBar extends StatefulWidget {
-  const ExactTabBar({super.key});
-
+  const ExactTabBar({super.key, required this.categories});
+  final List<Category> categories;
   @override
   State<ExactTabBar> createState() => _ExactTabBarState();
 }
@@ -14,7 +15,6 @@ class ExactTabBar extends StatefulWidget {
 class _ExactTabBarState extends State<ExactTabBar>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-  final List<String> _tabs = ['Science', 'Environment', 'Animals', 'Travel'];
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class _ExactTabBarState extends State<ExactTabBar>
           dividerColor: Colors.transparent,
           overlayColor: WidgetStateProperty.all(Colors.transparent),
           splashFactory: NoSplash.splashFactory,
-          tabs: _tabs.map((tab) => Tab(text: tab)).toList(),
+          tabs: widget.categories.map((tab) => Tab(text: tab.name)).toList(),
         ),
       ),
     );
@@ -65,6 +65,9 @@ class _ExactTabBarState extends State<ExactTabBar>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: _tabs.length, vsync: this);
+    _tabController = TabController(
+      length: widget.categories.length,
+      vsync: this,
+    );
   }
 }
