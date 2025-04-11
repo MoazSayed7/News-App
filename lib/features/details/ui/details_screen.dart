@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:intl/intl.dart';
 
 import '../../../core/assets/svg_assets.dart';
 import '../../../core/helpers/extensions.dart';
 import '../../../core/helpers/spacing.dart';
 import '../../../core/theme/colors.dart';
 import '../../../core/theme/text_styles.dart';
+import '../../home/data/models/news_response_model.dart';
 import 'widgets/content_card.dart';
 import 'widgets/header.dart';
 import 'widgets/header_image.dart';
 
 class DetailsScreen extends StatelessWidget {
-  const DetailsScreen({super.key});
-
+  final NewsArticle newArticle;
+  const DetailsScreen({super.key, required this.newArticle});
   @override
   Widget build(BuildContext context) {
+    final DateFormat formatter = DateFormat('MMMM d, yyyy');
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -23,7 +26,7 @@ class DetailsScreen extends StatelessWidget {
           children: [
             Stack(
               children: [
-                HeaderImage(),
+                HeaderImage(imageUrl: newArticle.imgUrl),
                 _buildBackButton(context),
                 _buildFavoriteButton(context),
                 Container(
@@ -31,9 +34,9 @@ class DetailsScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       Header(
-                        title: 'Snake have friends too',
-                        author: 'Moaz Sayed',
-                        publishedDate: 'May 13, 2020',
+                        title: newArticle.title,
+                        author: newArticle.author,
+                        publishedDate: formatter.format(newArticle.newsDate),
                       ),
                       verticalSpace(34),
                       Row(
@@ -46,10 +49,8 @@ class DetailsScreen extends StatelessWidget {
                       ),
                       verticalSpace(18),
                       ContentCard(
-                        imageUrl:
-                            'https://images.unsplash.com/photo-1568204960342-8612e15f9d1e',
-                        desc:
-                            'Most of us likely consider snakes to be cold, solitary beings, as indifferent to others of their kind as they are to us.\n\nBut those notions are wrong—especially when it comes to garter snakes, a new study says. snakes they hang out with—in other words, they have “friends”.',
+                        imageUrl: newArticle.imgUrl,
+                        desc: newArticle.desc,
                       ),
                     ],
                   ),
