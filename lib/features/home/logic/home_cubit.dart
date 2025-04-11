@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../data/repos/home_repo.dart';
-
 import 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
@@ -39,6 +38,23 @@ class HomeCubit extends Cubit<HomeState> {
       );
     } catch (error) {
       emit(HomeState.categoriesError(error.toString()));
+    }
+  }
+
+  void getNews() async {
+    emit(const HomeState.newsLoading());
+    final response = await _homeRepo.getNews();
+    try {
+      response.when(
+        success: (newsResponseModel) {
+          emit(HomeState.newsSuccess(newsResponseModel));
+        },
+        failure: (error) {
+          emit(HomeState.newsError(error.toString()));
+        },
+      );
+    } catch (error) {
+      emit(HomeState.newsError(error.toString()));
     }
   }
 }

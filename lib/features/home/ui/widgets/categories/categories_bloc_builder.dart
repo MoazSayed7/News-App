@@ -19,7 +19,9 @@ class _CategoriesBlocBuilderState extends State<CategoriesBlocBuilder> {
     return BlocBuilder<HomeCubit, HomeState>(
       buildWhen:
           (previous, current) =>
-              current is CategoriesSuccess || current is CategoriesError,
+              current is CategoriesSuccess ||
+              current is CategoriesError ||
+              current is CategoriesLoading,
       builder: (context, state) {
         return state.maybeWhen(
           categoriesSuccess: (categoriesResponseModel) {
