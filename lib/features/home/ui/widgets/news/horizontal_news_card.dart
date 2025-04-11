@@ -2,12 +2,17 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/theme/colors.dart';
-import '../../../../core/theme/text_styles.dart';
+import '../../../../../core/theme/colors.dart';
+import '../../../../../core/theme/text_styles.dart';
 
 class CustomHorizontalCard extends StatelessWidget {
-  const CustomHorizontalCard({super.key});
-
+  final String imageUrl;
+  final String desc;
+  const CustomHorizontalCard({
+    super.key,
+    required this.imageUrl,
+    required this.desc,
+  });
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,8 +47,7 @@ class CustomHorizontalCard extends StatelessWidget {
             ),
             clipBehavior: Clip.antiAlias,
             child: CachedNetworkImage(
-              imageUrl:
-                  'https://images.unsplash.com/photo-1500467525088-aafe28c0a95e',
+              imageUrl: imageUrl,
               fit: BoxFit.cover,
               filterQuality: FilterQuality.high,
               progressIndicatorBuilder:
@@ -62,7 +66,7 @@ class CustomHorizontalCard extends StatelessWidget {
                 SizedBox(
                   height: 60.h,
                   child: Text(
-                    'More animal species are getting COVID-19 for the first time',
+                    desc,
                     style: TextStyles.font9WhiteSemiBoldNunitoSans,
                     maxLines: 4,
                     overflow: TextOverflow.ellipsis,

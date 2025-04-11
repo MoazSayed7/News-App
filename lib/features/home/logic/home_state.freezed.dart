@@ -22,6 +22,9 @@ mixin _$HomeState {
     required TResult Function(String message) bannersError,
     required TResult Function() bannersLoading,
     required TResult Function(BannerResponseModel response) bannersSuccess,
+    required TResult Function(String message) newsError,
+    required TResult Function() newsLoading,
+    required TResult Function(NewsResponseModel response) newsSuccess,
     required TResult Function(String message) categoriesError,
     required TResult Function() categoriesLoading,
     required TResult Function(CategoriesResponseModel response)
@@ -33,6 +36,9 @@ mixin _$HomeState {
     TResult? Function(String message)? bannersError,
     TResult? Function()? bannersLoading,
     TResult? Function(BannerResponseModel response)? bannersSuccess,
+    TResult? Function(String message)? newsError,
+    TResult? Function()? newsLoading,
+    TResult? Function(NewsResponseModel response)? newsSuccess,
     TResult? Function(String message)? categoriesError,
     TResult? Function()? categoriesLoading,
     TResult? Function(CategoriesResponseModel response)? categoriesSuccess,
@@ -43,6 +49,9 @@ mixin _$HomeState {
     TResult Function(String message)? bannersError,
     TResult Function()? bannersLoading,
     TResult Function(BannerResponseModel response)? bannersSuccess,
+    TResult Function(String message)? newsError,
+    TResult Function()? newsLoading,
+    TResult Function(NewsResponseModel response)? newsSuccess,
     TResult Function(String message)? categoriesError,
     TResult Function()? categoriesLoading,
     TResult Function(CategoriesResponseModel response)? categoriesSuccess,
@@ -54,6 +63,9 @@ mixin _$HomeState {
     required TResult Function(BannersError value) bannersError,
     required TResult Function(BannersLoading value) bannersLoading,
     required TResult Function(BannersSuccess value) bannersSuccess,
+    required TResult Function(NewsError value) newsError,
+    required TResult Function(NewsLoading value) newsLoading,
+    required TResult Function(NewsSuccess value) newsSuccess,
     required TResult Function(CategoriesError value) categoriesError,
     required TResult Function(CategoriesLoading value) categoriesLoading,
     required TResult Function(CategoriesSuccess value) categoriesSuccess,
@@ -64,6 +76,9 @@ mixin _$HomeState {
     TResult? Function(BannersError value)? bannersError,
     TResult? Function(BannersLoading value)? bannersLoading,
     TResult? Function(BannersSuccess value)? bannersSuccess,
+    TResult? Function(NewsError value)? newsError,
+    TResult? Function(NewsLoading value)? newsLoading,
+    TResult? Function(NewsSuccess value)? newsSuccess,
     TResult? Function(CategoriesError value)? categoriesError,
     TResult? Function(CategoriesLoading value)? categoriesLoading,
     TResult? Function(CategoriesSuccess value)? categoriesSuccess,
@@ -74,6 +89,9 @@ mixin _$HomeState {
     TResult Function(BannersError value)? bannersError,
     TResult Function(BannersLoading value)? bannersLoading,
     TResult Function(BannersSuccess value)? bannersSuccess,
+    TResult Function(NewsError value)? newsError,
+    TResult Function(NewsLoading value)? newsLoading,
+    TResult Function(NewsSuccess value)? newsSuccess,
     TResult Function(CategoriesError value)? categoriesError,
     TResult Function(CategoriesLoading value)? categoriesLoading,
     TResult Function(CategoriesSuccess value)? categoriesSuccess,
@@ -175,6 +193,9 @@ class _$BannersErrorImpl implements BannersError {
     required TResult Function(String message) bannersError,
     required TResult Function() bannersLoading,
     required TResult Function(BannerResponseModel response) bannersSuccess,
+    required TResult Function(String message) newsError,
+    required TResult Function() newsLoading,
+    required TResult Function(NewsResponseModel response) newsSuccess,
     required TResult Function(String message) categoriesError,
     required TResult Function() categoriesLoading,
     required TResult Function(CategoriesResponseModel response)
@@ -190,6 +211,9 @@ class _$BannersErrorImpl implements BannersError {
     TResult? Function(String message)? bannersError,
     TResult? Function()? bannersLoading,
     TResult? Function(BannerResponseModel response)? bannersSuccess,
+    TResult? Function(String message)? newsError,
+    TResult? Function()? newsLoading,
+    TResult? Function(NewsResponseModel response)? newsSuccess,
     TResult? Function(String message)? categoriesError,
     TResult? Function()? categoriesLoading,
     TResult? Function(CategoriesResponseModel response)? categoriesSuccess,
@@ -204,6 +228,9 @@ class _$BannersErrorImpl implements BannersError {
     TResult Function(String message)? bannersError,
     TResult Function()? bannersLoading,
     TResult Function(BannerResponseModel response)? bannersSuccess,
+    TResult Function(String message)? newsError,
+    TResult Function()? newsLoading,
+    TResult Function(NewsResponseModel response)? newsSuccess,
     TResult Function(String message)? categoriesError,
     TResult Function()? categoriesLoading,
     TResult Function(CategoriesResponseModel response)? categoriesSuccess,
@@ -222,6 +249,9 @@ class _$BannersErrorImpl implements BannersError {
     required TResult Function(BannersError value) bannersError,
     required TResult Function(BannersLoading value) bannersLoading,
     required TResult Function(BannersSuccess value) bannersSuccess,
+    required TResult Function(NewsError value) newsError,
+    required TResult Function(NewsLoading value) newsLoading,
+    required TResult Function(NewsSuccess value) newsSuccess,
     required TResult Function(CategoriesError value) categoriesError,
     required TResult Function(CategoriesLoading value) categoriesLoading,
     required TResult Function(CategoriesSuccess value) categoriesSuccess,
@@ -236,6 +266,9 @@ class _$BannersErrorImpl implements BannersError {
     TResult? Function(BannersError value)? bannersError,
     TResult? Function(BannersLoading value)? bannersLoading,
     TResult? Function(BannersSuccess value)? bannersSuccess,
+    TResult? Function(NewsError value)? newsError,
+    TResult? Function(NewsLoading value)? newsLoading,
+    TResult? Function(NewsSuccess value)? newsSuccess,
     TResult? Function(CategoriesError value)? categoriesError,
     TResult? Function(CategoriesLoading value)? categoriesLoading,
     TResult? Function(CategoriesSuccess value)? categoriesSuccess,
@@ -250,6 +283,9 @@ class _$BannersErrorImpl implements BannersError {
     TResult Function(BannersError value)? bannersError,
     TResult Function(BannersLoading value)? bannersLoading,
     TResult Function(BannersSuccess value)? bannersSuccess,
+    TResult Function(NewsError value)? newsError,
+    TResult Function(NewsLoading value)? newsLoading,
+    TResult Function(NewsSuccess value)? newsSuccess,
     TResult Function(CategoriesError value)? categoriesError,
     TResult Function(CategoriesLoading value)? categoriesLoading,
     TResult Function(CategoriesSuccess value)? categoriesSuccess,
@@ -321,6 +357,9 @@ class _$BannersLoadingImpl implements BannersLoading {
     required TResult Function(String message) bannersError,
     required TResult Function() bannersLoading,
     required TResult Function(BannerResponseModel response) bannersSuccess,
+    required TResult Function(String message) newsError,
+    required TResult Function() newsLoading,
+    required TResult Function(NewsResponseModel response) newsSuccess,
     required TResult Function(String message) categoriesError,
     required TResult Function() categoriesLoading,
     required TResult Function(CategoriesResponseModel response)
@@ -336,6 +375,9 @@ class _$BannersLoadingImpl implements BannersLoading {
     TResult? Function(String message)? bannersError,
     TResult? Function()? bannersLoading,
     TResult? Function(BannerResponseModel response)? bannersSuccess,
+    TResult? Function(String message)? newsError,
+    TResult? Function()? newsLoading,
+    TResult? Function(NewsResponseModel response)? newsSuccess,
     TResult? Function(String message)? categoriesError,
     TResult? Function()? categoriesLoading,
     TResult? Function(CategoriesResponseModel response)? categoriesSuccess,
@@ -350,6 +392,9 @@ class _$BannersLoadingImpl implements BannersLoading {
     TResult Function(String message)? bannersError,
     TResult Function()? bannersLoading,
     TResult Function(BannerResponseModel response)? bannersSuccess,
+    TResult Function(String message)? newsError,
+    TResult Function()? newsLoading,
+    TResult Function(NewsResponseModel response)? newsSuccess,
     TResult Function(String message)? categoriesError,
     TResult Function()? categoriesLoading,
     TResult Function(CategoriesResponseModel response)? categoriesSuccess,
@@ -368,6 +413,9 @@ class _$BannersLoadingImpl implements BannersLoading {
     required TResult Function(BannersError value) bannersError,
     required TResult Function(BannersLoading value) bannersLoading,
     required TResult Function(BannersSuccess value) bannersSuccess,
+    required TResult Function(NewsError value) newsError,
+    required TResult Function(NewsLoading value) newsLoading,
+    required TResult Function(NewsSuccess value) newsSuccess,
     required TResult Function(CategoriesError value) categoriesError,
     required TResult Function(CategoriesLoading value) categoriesLoading,
     required TResult Function(CategoriesSuccess value) categoriesSuccess,
@@ -382,6 +430,9 @@ class _$BannersLoadingImpl implements BannersLoading {
     TResult? Function(BannersError value)? bannersError,
     TResult? Function(BannersLoading value)? bannersLoading,
     TResult? Function(BannersSuccess value)? bannersSuccess,
+    TResult? Function(NewsError value)? newsError,
+    TResult? Function(NewsLoading value)? newsLoading,
+    TResult? Function(NewsSuccess value)? newsSuccess,
     TResult? Function(CategoriesError value)? categoriesError,
     TResult? Function(CategoriesLoading value)? categoriesLoading,
     TResult? Function(CategoriesSuccess value)? categoriesSuccess,
@@ -396,6 +447,9 @@ class _$BannersLoadingImpl implements BannersLoading {
     TResult Function(BannersError value)? bannersError,
     TResult Function(BannersLoading value)? bannersLoading,
     TResult Function(BannersSuccess value)? bannersSuccess,
+    TResult Function(NewsError value)? newsError,
+    TResult Function(NewsLoading value)? newsLoading,
+    TResult Function(NewsSuccess value)? newsSuccess,
     TResult Function(CategoriesError value)? categoriesError,
     TResult Function(CategoriesLoading value)? categoriesLoading,
     TResult Function(CategoriesSuccess value)? categoriesSuccess,
@@ -490,6 +544,9 @@ class _$BannersSuccessImpl implements BannersSuccess {
     required TResult Function(String message) bannersError,
     required TResult Function() bannersLoading,
     required TResult Function(BannerResponseModel response) bannersSuccess,
+    required TResult Function(String message) newsError,
+    required TResult Function() newsLoading,
+    required TResult Function(NewsResponseModel response) newsSuccess,
     required TResult Function(String message) categoriesError,
     required TResult Function() categoriesLoading,
     required TResult Function(CategoriesResponseModel response)
@@ -505,6 +562,9 @@ class _$BannersSuccessImpl implements BannersSuccess {
     TResult? Function(String message)? bannersError,
     TResult? Function()? bannersLoading,
     TResult? Function(BannerResponseModel response)? bannersSuccess,
+    TResult? Function(String message)? newsError,
+    TResult? Function()? newsLoading,
+    TResult? Function(NewsResponseModel response)? newsSuccess,
     TResult? Function(String message)? categoriesError,
     TResult? Function()? categoriesLoading,
     TResult? Function(CategoriesResponseModel response)? categoriesSuccess,
@@ -519,6 +579,9 @@ class _$BannersSuccessImpl implements BannersSuccess {
     TResult Function(String message)? bannersError,
     TResult Function()? bannersLoading,
     TResult Function(BannerResponseModel response)? bannersSuccess,
+    TResult Function(String message)? newsError,
+    TResult Function()? newsLoading,
+    TResult Function(NewsResponseModel response)? newsSuccess,
     TResult Function(String message)? categoriesError,
     TResult Function()? categoriesLoading,
     TResult Function(CategoriesResponseModel response)? categoriesSuccess,
@@ -537,6 +600,9 @@ class _$BannersSuccessImpl implements BannersSuccess {
     required TResult Function(BannersError value) bannersError,
     required TResult Function(BannersLoading value) bannersLoading,
     required TResult Function(BannersSuccess value) bannersSuccess,
+    required TResult Function(NewsError value) newsError,
+    required TResult Function(NewsLoading value) newsLoading,
+    required TResult Function(NewsSuccess value) newsSuccess,
     required TResult Function(CategoriesError value) categoriesError,
     required TResult Function(CategoriesLoading value) categoriesLoading,
     required TResult Function(CategoriesSuccess value) categoriesSuccess,
@@ -551,6 +617,9 @@ class _$BannersSuccessImpl implements BannersSuccess {
     TResult? Function(BannersError value)? bannersError,
     TResult? Function(BannersLoading value)? bannersLoading,
     TResult? Function(BannersSuccess value)? bannersSuccess,
+    TResult? Function(NewsError value)? newsError,
+    TResult? Function(NewsLoading value)? newsLoading,
+    TResult? Function(NewsSuccess value)? newsSuccess,
     TResult? Function(CategoriesError value)? categoriesError,
     TResult? Function(CategoriesLoading value)? categoriesLoading,
     TResult? Function(CategoriesSuccess value)? categoriesSuccess,
@@ -565,6 +634,9 @@ class _$BannersSuccessImpl implements BannersSuccess {
     TResult Function(BannersError value)? bannersError,
     TResult Function(BannersLoading value)? bannersLoading,
     TResult Function(BannersSuccess value)? bannersSuccess,
+    TResult Function(NewsError value)? newsError,
+    TResult Function(NewsLoading value)? newsLoading,
+    TResult Function(NewsSuccess value)? newsSuccess,
     TResult Function(CategoriesError value)? categoriesError,
     TResult Function(CategoriesLoading value)? categoriesLoading,
     TResult Function(CategoriesSuccess value)? categoriesSuccess,
@@ -588,6 +660,546 @@ abstract class BannersSuccess implements HomeState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BannersSuccessImplCopyWith<_$BannersSuccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NewsErrorImplCopyWith<$Res> {
+  factory _$$NewsErrorImplCopyWith(
+    _$NewsErrorImpl value,
+    $Res Function(_$NewsErrorImpl) then,
+  ) = __$$NewsErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$NewsErrorImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$NewsErrorImpl>
+    implements _$$NewsErrorImplCopyWith<$Res> {
+  __$$NewsErrorImplCopyWithImpl(
+    _$NewsErrorImpl _value,
+    $Res Function(_$NewsErrorImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? message = null}) {
+    return _then(
+      _$NewsErrorImpl(
+        null == message
+            ? _value.message
+            : message // ignore: cast_nullable_to_non_nullable
+                as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+
+class _$NewsErrorImpl implements NewsError {
+  const _$NewsErrorImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'HomeState.newsError(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NewsErrorImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NewsErrorImplCopyWith<_$NewsErrorImpl> get copyWith =>
+      __$$NewsErrorImplCopyWithImpl<_$NewsErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String message) bannersError,
+    required TResult Function() bannersLoading,
+    required TResult Function(BannerResponseModel response) bannersSuccess,
+    required TResult Function(String message) newsError,
+    required TResult Function() newsLoading,
+    required TResult Function(NewsResponseModel response) newsSuccess,
+    required TResult Function(String message) categoriesError,
+    required TResult Function() categoriesLoading,
+    required TResult Function(CategoriesResponseModel response)
+    categoriesSuccess,
+    required TResult Function() initial,
+  }) {
+    return newsError(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String message)? bannersError,
+    TResult? Function()? bannersLoading,
+    TResult? Function(BannerResponseModel response)? bannersSuccess,
+    TResult? Function(String message)? newsError,
+    TResult? Function()? newsLoading,
+    TResult? Function(NewsResponseModel response)? newsSuccess,
+    TResult? Function(String message)? categoriesError,
+    TResult? Function()? categoriesLoading,
+    TResult? Function(CategoriesResponseModel response)? categoriesSuccess,
+    TResult? Function()? initial,
+  }) {
+    return newsError?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? bannersError,
+    TResult Function()? bannersLoading,
+    TResult Function(BannerResponseModel response)? bannersSuccess,
+    TResult Function(String message)? newsError,
+    TResult Function()? newsLoading,
+    TResult Function(NewsResponseModel response)? newsSuccess,
+    TResult Function(String message)? categoriesError,
+    TResult Function()? categoriesLoading,
+    TResult Function(CategoriesResponseModel response)? categoriesSuccess,
+    TResult Function()? initial,
+    required TResult orElse(),
+  }) {
+    if (newsError != null) {
+      return newsError(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BannersError value) bannersError,
+    required TResult Function(BannersLoading value) bannersLoading,
+    required TResult Function(BannersSuccess value) bannersSuccess,
+    required TResult Function(NewsError value) newsError,
+    required TResult Function(NewsLoading value) newsLoading,
+    required TResult Function(NewsSuccess value) newsSuccess,
+    required TResult Function(CategoriesError value) categoriesError,
+    required TResult Function(CategoriesLoading value) categoriesLoading,
+    required TResult Function(CategoriesSuccess value) categoriesSuccess,
+    required TResult Function(_Initial value) initial,
+  }) {
+    return newsError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BannersError value)? bannersError,
+    TResult? Function(BannersLoading value)? bannersLoading,
+    TResult? Function(BannersSuccess value)? bannersSuccess,
+    TResult? Function(NewsError value)? newsError,
+    TResult? Function(NewsLoading value)? newsLoading,
+    TResult? Function(NewsSuccess value)? newsSuccess,
+    TResult? Function(CategoriesError value)? categoriesError,
+    TResult? Function(CategoriesLoading value)? categoriesLoading,
+    TResult? Function(CategoriesSuccess value)? categoriesSuccess,
+    TResult? Function(_Initial value)? initial,
+  }) {
+    return newsError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BannersError value)? bannersError,
+    TResult Function(BannersLoading value)? bannersLoading,
+    TResult Function(BannersSuccess value)? bannersSuccess,
+    TResult Function(NewsError value)? newsError,
+    TResult Function(NewsLoading value)? newsLoading,
+    TResult Function(NewsSuccess value)? newsSuccess,
+    TResult Function(CategoriesError value)? categoriesError,
+    TResult Function(CategoriesLoading value)? categoriesLoading,
+    TResult Function(CategoriesSuccess value)? categoriesSuccess,
+    TResult Function(_Initial value)? initial,
+    required TResult orElse(),
+  }) {
+    if (newsError != null) {
+      return newsError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NewsError implements HomeState {
+  const factory NewsError(final String message) = _$NewsErrorImpl;
+
+  String get message;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$NewsErrorImplCopyWith<_$NewsErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NewsLoadingImplCopyWith<$Res> {
+  factory _$$NewsLoadingImplCopyWith(
+    _$NewsLoadingImpl value,
+    $Res Function(_$NewsLoadingImpl) then,
+  ) = __$$NewsLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NewsLoadingImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$NewsLoadingImpl>
+    implements _$$NewsLoadingImplCopyWith<$Res> {
+  __$$NewsLoadingImplCopyWithImpl(
+    _$NewsLoadingImpl _value,
+    $Res Function(_$NewsLoadingImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$NewsLoadingImpl implements NewsLoading {
+  const _$NewsLoadingImpl();
+
+  @override
+  String toString() {
+    return 'HomeState.newsLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NewsLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String message) bannersError,
+    required TResult Function() bannersLoading,
+    required TResult Function(BannerResponseModel response) bannersSuccess,
+    required TResult Function(String message) newsError,
+    required TResult Function() newsLoading,
+    required TResult Function(NewsResponseModel response) newsSuccess,
+    required TResult Function(String message) categoriesError,
+    required TResult Function() categoriesLoading,
+    required TResult Function(CategoriesResponseModel response)
+    categoriesSuccess,
+    required TResult Function() initial,
+  }) {
+    return newsLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String message)? bannersError,
+    TResult? Function()? bannersLoading,
+    TResult? Function(BannerResponseModel response)? bannersSuccess,
+    TResult? Function(String message)? newsError,
+    TResult? Function()? newsLoading,
+    TResult? Function(NewsResponseModel response)? newsSuccess,
+    TResult? Function(String message)? categoriesError,
+    TResult? Function()? categoriesLoading,
+    TResult? Function(CategoriesResponseModel response)? categoriesSuccess,
+    TResult? Function()? initial,
+  }) {
+    return newsLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? bannersError,
+    TResult Function()? bannersLoading,
+    TResult Function(BannerResponseModel response)? bannersSuccess,
+    TResult Function(String message)? newsError,
+    TResult Function()? newsLoading,
+    TResult Function(NewsResponseModel response)? newsSuccess,
+    TResult Function(String message)? categoriesError,
+    TResult Function()? categoriesLoading,
+    TResult Function(CategoriesResponseModel response)? categoriesSuccess,
+    TResult Function()? initial,
+    required TResult orElse(),
+  }) {
+    if (newsLoading != null) {
+      return newsLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BannersError value) bannersError,
+    required TResult Function(BannersLoading value) bannersLoading,
+    required TResult Function(BannersSuccess value) bannersSuccess,
+    required TResult Function(NewsError value) newsError,
+    required TResult Function(NewsLoading value) newsLoading,
+    required TResult Function(NewsSuccess value) newsSuccess,
+    required TResult Function(CategoriesError value) categoriesError,
+    required TResult Function(CategoriesLoading value) categoriesLoading,
+    required TResult Function(CategoriesSuccess value) categoriesSuccess,
+    required TResult Function(_Initial value) initial,
+  }) {
+    return newsLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BannersError value)? bannersError,
+    TResult? Function(BannersLoading value)? bannersLoading,
+    TResult? Function(BannersSuccess value)? bannersSuccess,
+    TResult? Function(NewsError value)? newsError,
+    TResult? Function(NewsLoading value)? newsLoading,
+    TResult? Function(NewsSuccess value)? newsSuccess,
+    TResult? Function(CategoriesError value)? categoriesError,
+    TResult? Function(CategoriesLoading value)? categoriesLoading,
+    TResult? Function(CategoriesSuccess value)? categoriesSuccess,
+    TResult? Function(_Initial value)? initial,
+  }) {
+    return newsLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BannersError value)? bannersError,
+    TResult Function(BannersLoading value)? bannersLoading,
+    TResult Function(BannersSuccess value)? bannersSuccess,
+    TResult Function(NewsError value)? newsError,
+    TResult Function(NewsLoading value)? newsLoading,
+    TResult Function(NewsSuccess value)? newsSuccess,
+    TResult Function(CategoriesError value)? categoriesError,
+    TResult Function(CategoriesLoading value)? categoriesLoading,
+    TResult Function(CategoriesSuccess value)? categoriesSuccess,
+    TResult Function(_Initial value)? initial,
+    required TResult orElse(),
+  }) {
+    if (newsLoading != null) {
+      return newsLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NewsLoading implements HomeState {
+  const factory NewsLoading() = _$NewsLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$NewsSuccessImplCopyWith<$Res> {
+  factory _$$NewsSuccessImplCopyWith(
+    _$NewsSuccessImpl value,
+    $Res Function(_$NewsSuccessImpl) then,
+  ) = __$$NewsSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({NewsResponseModel response});
+}
+
+/// @nodoc
+class __$$NewsSuccessImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$NewsSuccessImpl>
+    implements _$$NewsSuccessImplCopyWith<$Res> {
+  __$$NewsSuccessImplCopyWithImpl(
+    _$NewsSuccessImpl _value,
+    $Res Function(_$NewsSuccessImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? response = null}) {
+    return _then(
+      _$NewsSuccessImpl(
+        null == response
+            ? _value.response
+            : response // ignore: cast_nullable_to_non_nullable
+                as NewsResponseModel,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+
+class _$NewsSuccessImpl implements NewsSuccess {
+  const _$NewsSuccessImpl(this.response);
+
+  @override
+  final NewsResponseModel response;
+
+  @override
+  String toString() {
+    return 'HomeState.newsSuccess(response: $response)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NewsSuccessImpl &&
+            (identical(other.response, response) ||
+                other.response == response));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, response);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NewsSuccessImplCopyWith<_$NewsSuccessImpl> get copyWith =>
+      __$$NewsSuccessImplCopyWithImpl<_$NewsSuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String message) bannersError,
+    required TResult Function() bannersLoading,
+    required TResult Function(BannerResponseModel response) bannersSuccess,
+    required TResult Function(String message) newsError,
+    required TResult Function() newsLoading,
+    required TResult Function(NewsResponseModel response) newsSuccess,
+    required TResult Function(String message) categoriesError,
+    required TResult Function() categoriesLoading,
+    required TResult Function(CategoriesResponseModel response)
+    categoriesSuccess,
+    required TResult Function() initial,
+  }) {
+    return newsSuccess(response);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String message)? bannersError,
+    TResult? Function()? bannersLoading,
+    TResult? Function(BannerResponseModel response)? bannersSuccess,
+    TResult? Function(String message)? newsError,
+    TResult? Function()? newsLoading,
+    TResult? Function(NewsResponseModel response)? newsSuccess,
+    TResult? Function(String message)? categoriesError,
+    TResult? Function()? categoriesLoading,
+    TResult? Function(CategoriesResponseModel response)? categoriesSuccess,
+    TResult? Function()? initial,
+  }) {
+    return newsSuccess?.call(response);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? bannersError,
+    TResult Function()? bannersLoading,
+    TResult Function(BannerResponseModel response)? bannersSuccess,
+    TResult Function(String message)? newsError,
+    TResult Function()? newsLoading,
+    TResult Function(NewsResponseModel response)? newsSuccess,
+    TResult Function(String message)? categoriesError,
+    TResult Function()? categoriesLoading,
+    TResult Function(CategoriesResponseModel response)? categoriesSuccess,
+    TResult Function()? initial,
+    required TResult orElse(),
+  }) {
+    if (newsSuccess != null) {
+      return newsSuccess(response);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BannersError value) bannersError,
+    required TResult Function(BannersLoading value) bannersLoading,
+    required TResult Function(BannersSuccess value) bannersSuccess,
+    required TResult Function(NewsError value) newsError,
+    required TResult Function(NewsLoading value) newsLoading,
+    required TResult Function(NewsSuccess value) newsSuccess,
+    required TResult Function(CategoriesError value) categoriesError,
+    required TResult Function(CategoriesLoading value) categoriesLoading,
+    required TResult Function(CategoriesSuccess value) categoriesSuccess,
+    required TResult Function(_Initial value) initial,
+  }) {
+    return newsSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BannersError value)? bannersError,
+    TResult? Function(BannersLoading value)? bannersLoading,
+    TResult? Function(BannersSuccess value)? bannersSuccess,
+    TResult? Function(NewsError value)? newsError,
+    TResult? Function(NewsLoading value)? newsLoading,
+    TResult? Function(NewsSuccess value)? newsSuccess,
+    TResult? Function(CategoriesError value)? categoriesError,
+    TResult? Function(CategoriesLoading value)? categoriesLoading,
+    TResult? Function(CategoriesSuccess value)? categoriesSuccess,
+    TResult? Function(_Initial value)? initial,
+  }) {
+    return newsSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BannersError value)? bannersError,
+    TResult Function(BannersLoading value)? bannersLoading,
+    TResult Function(BannersSuccess value)? bannersSuccess,
+    TResult Function(NewsError value)? newsError,
+    TResult Function(NewsLoading value)? newsLoading,
+    TResult Function(NewsSuccess value)? newsSuccess,
+    TResult Function(CategoriesError value)? categoriesError,
+    TResult Function(CategoriesLoading value)? categoriesLoading,
+    TResult Function(CategoriesSuccess value)? categoriesSuccess,
+    TResult Function(_Initial value)? initial,
+    required TResult orElse(),
+  }) {
+    if (newsSuccess != null) {
+      return newsSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NewsSuccess implements HomeState {
+  const factory NewsSuccess(final NewsResponseModel response) =
+      _$NewsSuccessImpl;
+
+  NewsResponseModel get response;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$NewsSuccessImplCopyWith<_$NewsSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -667,6 +1279,9 @@ class _$CategoriesErrorImpl implements CategoriesError {
     required TResult Function(String message) bannersError,
     required TResult Function() bannersLoading,
     required TResult Function(BannerResponseModel response) bannersSuccess,
+    required TResult Function(String message) newsError,
+    required TResult Function() newsLoading,
+    required TResult Function(NewsResponseModel response) newsSuccess,
     required TResult Function(String message) categoriesError,
     required TResult Function() categoriesLoading,
     required TResult Function(CategoriesResponseModel response)
@@ -682,6 +1297,9 @@ class _$CategoriesErrorImpl implements CategoriesError {
     TResult? Function(String message)? bannersError,
     TResult? Function()? bannersLoading,
     TResult? Function(BannerResponseModel response)? bannersSuccess,
+    TResult? Function(String message)? newsError,
+    TResult? Function()? newsLoading,
+    TResult? Function(NewsResponseModel response)? newsSuccess,
     TResult? Function(String message)? categoriesError,
     TResult? Function()? categoriesLoading,
     TResult? Function(CategoriesResponseModel response)? categoriesSuccess,
@@ -696,6 +1314,9 @@ class _$CategoriesErrorImpl implements CategoriesError {
     TResult Function(String message)? bannersError,
     TResult Function()? bannersLoading,
     TResult Function(BannerResponseModel response)? bannersSuccess,
+    TResult Function(String message)? newsError,
+    TResult Function()? newsLoading,
+    TResult Function(NewsResponseModel response)? newsSuccess,
     TResult Function(String message)? categoriesError,
     TResult Function()? categoriesLoading,
     TResult Function(CategoriesResponseModel response)? categoriesSuccess,
@@ -714,6 +1335,9 @@ class _$CategoriesErrorImpl implements CategoriesError {
     required TResult Function(BannersError value) bannersError,
     required TResult Function(BannersLoading value) bannersLoading,
     required TResult Function(BannersSuccess value) bannersSuccess,
+    required TResult Function(NewsError value) newsError,
+    required TResult Function(NewsLoading value) newsLoading,
+    required TResult Function(NewsSuccess value) newsSuccess,
     required TResult Function(CategoriesError value) categoriesError,
     required TResult Function(CategoriesLoading value) categoriesLoading,
     required TResult Function(CategoriesSuccess value) categoriesSuccess,
@@ -728,6 +1352,9 @@ class _$CategoriesErrorImpl implements CategoriesError {
     TResult? Function(BannersError value)? bannersError,
     TResult? Function(BannersLoading value)? bannersLoading,
     TResult? Function(BannersSuccess value)? bannersSuccess,
+    TResult? Function(NewsError value)? newsError,
+    TResult? Function(NewsLoading value)? newsLoading,
+    TResult? Function(NewsSuccess value)? newsSuccess,
     TResult? Function(CategoriesError value)? categoriesError,
     TResult? Function(CategoriesLoading value)? categoriesLoading,
     TResult? Function(CategoriesSuccess value)? categoriesSuccess,
@@ -742,6 +1369,9 @@ class _$CategoriesErrorImpl implements CategoriesError {
     TResult Function(BannersError value)? bannersError,
     TResult Function(BannersLoading value)? bannersLoading,
     TResult Function(BannersSuccess value)? bannersSuccess,
+    TResult Function(NewsError value)? newsError,
+    TResult Function(NewsLoading value)? newsLoading,
+    TResult Function(NewsSuccess value)? newsSuccess,
     TResult Function(CategoriesError value)? categoriesError,
     TResult Function(CategoriesLoading value)? categoriesLoading,
     TResult Function(CategoriesSuccess value)? categoriesSuccess,
@@ -813,6 +1443,9 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     required TResult Function(String message) bannersError,
     required TResult Function() bannersLoading,
     required TResult Function(BannerResponseModel response) bannersSuccess,
+    required TResult Function(String message) newsError,
+    required TResult Function() newsLoading,
+    required TResult Function(NewsResponseModel response) newsSuccess,
     required TResult Function(String message) categoriesError,
     required TResult Function() categoriesLoading,
     required TResult Function(CategoriesResponseModel response)
@@ -828,6 +1461,9 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     TResult? Function(String message)? bannersError,
     TResult? Function()? bannersLoading,
     TResult? Function(BannerResponseModel response)? bannersSuccess,
+    TResult? Function(String message)? newsError,
+    TResult? Function()? newsLoading,
+    TResult? Function(NewsResponseModel response)? newsSuccess,
     TResult? Function(String message)? categoriesError,
     TResult? Function()? categoriesLoading,
     TResult? Function(CategoriesResponseModel response)? categoriesSuccess,
@@ -842,6 +1478,9 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     TResult Function(String message)? bannersError,
     TResult Function()? bannersLoading,
     TResult Function(BannerResponseModel response)? bannersSuccess,
+    TResult Function(String message)? newsError,
+    TResult Function()? newsLoading,
+    TResult Function(NewsResponseModel response)? newsSuccess,
     TResult Function(String message)? categoriesError,
     TResult Function()? categoriesLoading,
     TResult Function(CategoriesResponseModel response)? categoriesSuccess,
@@ -860,6 +1499,9 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     required TResult Function(BannersError value) bannersError,
     required TResult Function(BannersLoading value) bannersLoading,
     required TResult Function(BannersSuccess value) bannersSuccess,
+    required TResult Function(NewsError value) newsError,
+    required TResult Function(NewsLoading value) newsLoading,
+    required TResult Function(NewsSuccess value) newsSuccess,
     required TResult Function(CategoriesError value) categoriesError,
     required TResult Function(CategoriesLoading value) categoriesLoading,
     required TResult Function(CategoriesSuccess value) categoriesSuccess,
@@ -874,6 +1516,9 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     TResult? Function(BannersError value)? bannersError,
     TResult? Function(BannersLoading value)? bannersLoading,
     TResult? Function(BannersSuccess value)? bannersSuccess,
+    TResult? Function(NewsError value)? newsError,
+    TResult? Function(NewsLoading value)? newsLoading,
+    TResult? Function(NewsSuccess value)? newsSuccess,
     TResult? Function(CategoriesError value)? categoriesError,
     TResult? Function(CategoriesLoading value)? categoriesLoading,
     TResult? Function(CategoriesSuccess value)? categoriesSuccess,
@@ -888,6 +1533,9 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     TResult Function(BannersError value)? bannersError,
     TResult Function(BannersLoading value)? bannersLoading,
     TResult Function(BannersSuccess value)? bannersSuccess,
+    TResult Function(NewsError value)? newsError,
+    TResult Function(NewsLoading value)? newsLoading,
+    TResult Function(NewsSuccess value)? newsSuccess,
     TResult Function(CategoriesError value)? categoriesError,
     TResult Function(CategoriesLoading value)? categoriesLoading,
     TResult Function(CategoriesSuccess value)? categoriesSuccess,
@@ -982,6 +1630,9 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     required TResult Function(String message) bannersError,
     required TResult Function() bannersLoading,
     required TResult Function(BannerResponseModel response) bannersSuccess,
+    required TResult Function(String message) newsError,
+    required TResult Function() newsLoading,
+    required TResult Function(NewsResponseModel response) newsSuccess,
     required TResult Function(String message) categoriesError,
     required TResult Function() categoriesLoading,
     required TResult Function(CategoriesResponseModel response)
@@ -997,6 +1648,9 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     TResult? Function(String message)? bannersError,
     TResult? Function()? bannersLoading,
     TResult? Function(BannerResponseModel response)? bannersSuccess,
+    TResult? Function(String message)? newsError,
+    TResult? Function()? newsLoading,
+    TResult? Function(NewsResponseModel response)? newsSuccess,
     TResult? Function(String message)? categoriesError,
     TResult? Function()? categoriesLoading,
     TResult? Function(CategoriesResponseModel response)? categoriesSuccess,
@@ -1011,6 +1665,9 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     TResult Function(String message)? bannersError,
     TResult Function()? bannersLoading,
     TResult Function(BannerResponseModel response)? bannersSuccess,
+    TResult Function(String message)? newsError,
+    TResult Function()? newsLoading,
+    TResult Function(NewsResponseModel response)? newsSuccess,
     TResult Function(String message)? categoriesError,
     TResult Function()? categoriesLoading,
     TResult Function(CategoriesResponseModel response)? categoriesSuccess,
@@ -1029,6 +1686,9 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     required TResult Function(BannersError value) bannersError,
     required TResult Function(BannersLoading value) bannersLoading,
     required TResult Function(BannersSuccess value) bannersSuccess,
+    required TResult Function(NewsError value) newsError,
+    required TResult Function(NewsLoading value) newsLoading,
+    required TResult Function(NewsSuccess value) newsSuccess,
     required TResult Function(CategoriesError value) categoriesError,
     required TResult Function(CategoriesLoading value) categoriesLoading,
     required TResult Function(CategoriesSuccess value) categoriesSuccess,
@@ -1043,6 +1703,9 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     TResult? Function(BannersError value)? bannersError,
     TResult? Function(BannersLoading value)? bannersLoading,
     TResult? Function(BannersSuccess value)? bannersSuccess,
+    TResult? Function(NewsError value)? newsError,
+    TResult? Function(NewsLoading value)? newsLoading,
+    TResult? Function(NewsSuccess value)? newsSuccess,
     TResult? Function(CategoriesError value)? categoriesError,
     TResult? Function(CategoriesLoading value)? categoriesLoading,
     TResult? Function(CategoriesSuccess value)? categoriesSuccess,
@@ -1057,6 +1720,9 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     TResult Function(BannersError value)? bannersError,
     TResult Function(BannersLoading value)? bannersLoading,
     TResult Function(BannersSuccess value)? bannersSuccess,
+    TResult Function(NewsError value)? newsError,
+    TResult Function(NewsLoading value)? newsLoading,
+    TResult Function(NewsSuccess value)? newsSuccess,
     TResult Function(CategoriesError value)? categoriesError,
     TResult Function(CategoriesLoading value)? categoriesLoading,
     TResult Function(CategoriesSuccess value)? categoriesSuccess,
@@ -1129,6 +1795,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function(String message) bannersError,
     required TResult Function() bannersLoading,
     required TResult Function(BannerResponseModel response) bannersSuccess,
+    required TResult Function(String message) newsError,
+    required TResult Function() newsLoading,
+    required TResult Function(NewsResponseModel response) newsSuccess,
     required TResult Function(String message) categoriesError,
     required TResult Function() categoriesLoading,
     required TResult Function(CategoriesResponseModel response)
@@ -1144,6 +1813,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(String message)? bannersError,
     TResult? Function()? bannersLoading,
     TResult? Function(BannerResponseModel response)? bannersSuccess,
+    TResult? Function(String message)? newsError,
+    TResult? Function()? newsLoading,
+    TResult? Function(NewsResponseModel response)? newsSuccess,
     TResult? Function(String message)? categoriesError,
     TResult? Function()? categoriesLoading,
     TResult? Function(CategoriesResponseModel response)? categoriesSuccess,
@@ -1158,6 +1830,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(String message)? bannersError,
     TResult Function()? bannersLoading,
     TResult Function(BannerResponseModel response)? bannersSuccess,
+    TResult Function(String message)? newsError,
+    TResult Function()? newsLoading,
+    TResult Function(NewsResponseModel response)? newsSuccess,
     TResult Function(String message)? categoriesError,
     TResult Function()? categoriesLoading,
     TResult Function(CategoriesResponseModel response)? categoriesSuccess,
@@ -1176,6 +1851,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function(BannersError value) bannersError,
     required TResult Function(BannersLoading value) bannersLoading,
     required TResult Function(BannersSuccess value) bannersSuccess,
+    required TResult Function(NewsError value) newsError,
+    required TResult Function(NewsLoading value) newsLoading,
+    required TResult Function(NewsSuccess value) newsSuccess,
     required TResult Function(CategoriesError value) categoriesError,
     required TResult Function(CategoriesLoading value) categoriesLoading,
     required TResult Function(CategoriesSuccess value) categoriesSuccess,
@@ -1190,6 +1868,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(BannersError value)? bannersError,
     TResult? Function(BannersLoading value)? bannersLoading,
     TResult? Function(BannersSuccess value)? bannersSuccess,
+    TResult? Function(NewsError value)? newsError,
+    TResult? Function(NewsLoading value)? newsLoading,
+    TResult? Function(NewsSuccess value)? newsSuccess,
     TResult? Function(CategoriesError value)? categoriesError,
     TResult? Function(CategoriesLoading value)? categoriesLoading,
     TResult? Function(CategoriesSuccess value)? categoriesSuccess,
@@ -1204,6 +1885,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(BannersError value)? bannersError,
     TResult Function(BannersLoading value)? bannersLoading,
     TResult Function(BannersSuccess value)? bannersSuccess,
+    TResult Function(NewsError value)? newsError,
+    TResult Function(NewsLoading value)? newsLoading,
+    TResult Function(NewsSuccess value)? newsSuccess,
     TResult Function(CategoriesError value)? categoriesError,
     TResult Function(CategoriesLoading value)? categoriesLoading,
     TResult Function(CategoriesSuccess value)? categoriesSuccess,

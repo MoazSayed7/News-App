@@ -19,7 +19,9 @@ class _BannersBlocBuilderState extends State<BannersBlocBuilder> {
     return BlocBuilder<HomeCubit, HomeState>(
       buildWhen:
           (previous, current) =>
-              current is BannersSuccess || current is BannersError,
+              current is BannersSuccess ||
+              current is BannersError ||
+              current is BannersLoading,
       builder: (context, state) {
         return state.maybeWhen(
           bannersSuccess: (bannerResponseModel) {

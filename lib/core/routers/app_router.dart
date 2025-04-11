@@ -19,8 +19,9 @@ class AppRouter {
                     (context) =>
                         HomeCubit(getIt())
                           ..getBanners()
-                          ..getCategories(),
-                child: HomeScreen(),
+                          ..getCategories()
+                          ..getNews(),
+                child: const HomeScreen(),
               ),
         );
 
