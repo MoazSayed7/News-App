@@ -7,19 +7,17 @@ import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/routers/routes.dart';
 import '../../../../../core/theme/colors.dart';
 import '../../../../../core/theme/text_styles.dart';
+import '../../../data/models/news_response_model.dart';
 
 class CustomVerticalCard extends StatelessWidget {
-  final String imageUrl;
-  final String desc;
-  const CustomVerticalCard({
-    super.key,
-    required this.imageUrl,
-    required this.desc,
-  });
+  final NewsArticle newArticle;
+
+  const CustomVerticalCard({super.key, required this.newArticle});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.pushNamed(Routes.detailsScreen),
+      onTap:
+          () => context.pushNamed(Routes.detailsScreen, arguments: newArticle),
       child: Container(
         height: 209.h,
         width: 144.69.w,
@@ -38,7 +36,7 @@ class CustomVerticalCard extends StatelessWidget {
               height: 133.79.h,
               width: double.infinity,
               child: CachedNetworkImage(
-                imageUrl: imageUrl,
+                imageUrl: newArticle.imgUrl,
                 filterQuality: FilterQuality.high,
                 fit: BoxFit.cover,
                 progressIndicatorBuilder:
@@ -51,7 +49,7 @@ class CustomVerticalCard extends StatelessWidget {
             ),
             verticalSpace(7.36),
             Text(
-              desc,
+              newArticle.desc,
               style: TextStyles.font9WhiteSemiBoldNunitoSans,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,

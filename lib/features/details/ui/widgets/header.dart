@@ -30,7 +30,7 @@ class Header extends StatelessWidget {
                 style: TextStyles.font10WhiteLightNunitoSans,
               ),
               TextSpan(
-                text: author,
+                text: author == 'Mohab Gamal' ? 'Moaz Sayed' : author,
                 style: TextStyles.font10WarmAmberSemiBoldNunitoSans,
               ),
             ],

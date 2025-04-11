@@ -54,8 +54,7 @@ class NewsBlocBuilder extends StatelessWidget {
         physics: NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) {
           return CustomHorizontalCard(
-            imageUrl: newsResponseModel.data[index].imgUrl,
-            desc: newsResponseModel.data[index].desc,
+            newArticle: newsResponseModel.data[index],
           );
         },
         separatorBuilder: (context, index) {
@@ -74,10 +73,7 @@ class NewsBlocBuilder extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         physics: ClampingScrollPhysics(),
         itemBuilder: (context, index) {
-          return CustomVerticalCard(
-            imageUrl: newsResponseModel.data[index].imgUrl,
-            desc: newsResponseModel.data[index].desc,
-          );
+          return CustomVerticalCard(newArticle: newsResponseModel.data[index]);
         },
         separatorBuilder: (context, index) {
           return horizontalSpace(15);

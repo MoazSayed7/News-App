@@ -5,8 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/colors.dart';
 
 class HeaderImage extends StatelessWidget {
-  const HeaderImage({super.key});
-
+  final String imageUrl;
+  const HeaderImage({super.key, required this.imageUrl});
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -27,8 +27,7 @@ class HeaderImage extends StatelessWidget {
         },
         blendMode: BlendMode.srcATop,
         child: CachedNetworkImage(
-          imageUrl:
-              'https://images.unsplash.com/photo-1588017316954-bdef9c862ca2',
+          imageUrl: imageUrl,
           fit: BoxFit.cover,
           filterQuality: FilterQuality.high,
           progressIndicatorBuilder:

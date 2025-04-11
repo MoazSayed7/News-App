@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/details/ui/details_screen.dart';
+import '../../features/home/data/models/news_response_model.dart';
 import '../../features/home/logic/home_cubit.dart';
 import '../../features/home/ui/home_screen.dart';
 import '../../features/onBoarding/ui/onboarding_screen.dart';
@@ -26,7 +27,12 @@ class AppRouter {
         );
 
       case Routes.detailsScreen:
-        return MaterialPageRoute(builder: (_) => DetailsScreen());
+        return MaterialPageRoute(
+          builder:
+              (_) => DetailsScreen(
+                newArticle: routeSettings.arguments as NewsArticle,
+              ),
+        );
 
       case Routes.onBoardingScreen:
         return MaterialPageRoute(builder: (_) => OnBoardingScreen());
