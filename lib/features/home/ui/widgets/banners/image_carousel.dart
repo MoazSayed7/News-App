@@ -51,8 +51,11 @@ class BannerItem extends StatelessWidget {
           fit: BoxFit.cover,
           filterQuality: FilterQuality.high,
           progressIndicatorBuilder:
-              (context, url, downloadProgress) =>
-                  CircularProgressIndicator(value: downloadProgress.progress),
+              (context, url, downloadProgress) => Center(
+                child: CircularProgressIndicator(
+                  value: downloadProgress.progress,
+                ),
+              ),
           errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
       ),

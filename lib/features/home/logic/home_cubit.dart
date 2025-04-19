@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../core/services/hive_service.dart';
 import '../data/repos/home_repo.dart';
 import 'home_state.dart';
 
@@ -12,15 +13,26 @@ class HomeCubit extends Cubit<HomeState> {
     final response = await _homeRepo.getBanners();
     try {
       response.when(
-        success: (bannerResponseModel) {
+        success: (bannerResponseModel) async {
+          await HiveService.saveBanners(bannerResponseModel);
           emit(HomeState.bannersSuccess(bannerResponseModel));
         },
         failure: (error) {
-          emit(HomeState.bannersError(error.toString()));
+          final bannerResponseModel = HiveService.getBanners();
+          if (bannerResponseModel != null) {
+            emit(HomeState.bannersSuccess(bannerResponseModel));
+          } else {
+            emit(HomeState.bannersError(error.toString()));
+          }
         },
       );
     } catch (error) {
-      emit(HomeState.bannersError(error.toString()));
+      final bannerResponseModel = HiveService.getBanners();
+      if (bannerResponseModel != null) {
+        emit(HomeState.bannersSuccess(bannerResponseModel));
+      } else {
+        emit(HomeState.bannersError(error.toString()));
+      }
     }
   }
 
@@ -29,15 +41,26 @@ class HomeCubit extends Cubit<HomeState> {
     final response = await _homeRepo.getCategories();
     try {
       response.when(
-        success: (categoriesResponseModel) {
+        success: (categoriesResponseModel) async {
+          await HiveService.saveCategories(categoriesResponseModel);
           emit(HomeState.categoriesSuccess(categoriesResponseModel));
         },
         failure: (error) {
-          emit(HomeState.categoriesError(error.toString()));
+          final categoriesResponseModel = HiveService.getCategories();
+          if (categoriesResponseModel != null) {
+            emit(HomeState.categoriesSuccess(categoriesResponseModel));
+          } else {
+            emit(HomeState.categoriesError(error.toString()));
+          }
         },
       );
     } catch (error) {
-      emit(HomeState.categoriesError(error.toString()));
+      final categoriesResponseModel = HiveService.getCategories();
+      if (categoriesResponseModel != null) {
+        emit(HomeState.categoriesSuccess(categoriesResponseModel));
+      } else {
+        emit(HomeState.categoriesError(error.toString()));
+      }
     }
   }
 
@@ -46,15 +69,26 @@ class HomeCubit extends Cubit<HomeState> {
     final response = await _homeRepo.getNews();
     try {
       response.when(
-        success: (newsResponseModel) {
+        success: (newsResponseModel) async {
+          await HiveService.saveNews(newsResponseModel);
           emit(HomeState.newsSuccess(newsResponseModel));
         },
         failure: (error) {
-          emit(HomeState.newsError(error.toString()));
+          final newsResponseModel = HiveService.getNews();
+          if (newsResponseModel != null) {
+            emit(HomeState.newsSuccess(newsResponseModel));
+          } else {
+            emit(HomeState.newsError(error.toString()));
+          }
         },
       );
     } catch (error) {
-      emit(HomeState.newsError(error.toString()));
+      final newsResponseModel = HiveService.getNews();
+      if (newsResponseModel != null) {
+        emit(HomeState.newsSuccess(newsResponseModel));
+      } else {
+        emit(HomeState.newsError(error.toString()));
+      }
     }
   }
 }
