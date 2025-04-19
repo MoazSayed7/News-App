@@ -13,13 +13,13 @@ class HomeState with _$HomeState {
   const factory HomeState.bannersSuccess(BannerResponseModel response) =
       BannersSuccess;
 
-  const factory HomeState.newsError(String message) = NewsError;
-  const factory HomeState.newsLoading() = NewsLoading;
-  const factory HomeState.newsSuccess(NewsResponseModel response) = NewsSuccess;
-
   const factory HomeState.categoriesError(String message) = CategoriesError;
   const factory HomeState.categoriesLoading() = CategoriesLoading;
   const factory HomeState.categoriesSuccess(CategoriesResponseModel response) =
       CategoriesSuccess;
+
   const factory HomeState.initial() = _Initial;
+  const factory HomeState.newsError(String message) = NewsError;
+  const factory HomeState.newsLoading() = NewsLoading;
+  const factory HomeState.newsSuccess(NewsResponseModel response) = NewsSuccess;
 }

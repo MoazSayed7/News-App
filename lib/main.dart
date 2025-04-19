@@ -8,6 +8,7 @@ import 'core/assets/svg_assets.dart';
 import 'core/di/dependency_injection.dart';
 import 'core/helpers/bloc_observer.dart';
 import 'core/routers/app_router.dart';
+import 'core/services/hive_service.dart';
 import 'news_app.dart';
 
 Future<void> main() async {
@@ -17,6 +18,8 @@ Future<void> main() async {
   );
   Bloc.observer = MyBlocObserver();
   await Future.wait([
+    // Initialize Hive
+    HiveService().init(),
     setupGetIt(),
     SystemChrome.setPreferredOrientations(<DeviceOrientation>[
       DeviceOrientation.portraitUp,
