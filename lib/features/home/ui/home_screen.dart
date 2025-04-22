@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/helpers/spacing.dart';
+import '../../../core/widgets/network_status_widget.dart';
 import '../../../core/widgets/section_header.dart';
 import 'widgets/banners/banners_bloc_builder.dart';
 import 'widgets/categories/categories_bloc_builder.dart';
@@ -30,6 +31,7 @@ class HomeScreen extends StatelessWidget {
               ),
               verticalSpace(12.48),
               NewsBlocBuilder(),
+              NetworkStatusWidget(),
             ],
           ),
         ),

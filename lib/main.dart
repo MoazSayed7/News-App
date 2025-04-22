@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'core/assets/svg_assets.dart';
 import 'core/di/dependency_injection.dart';
@@ -28,9 +29,14 @@ Future<void> main() async {
     ScreenUtil.ensureScreenSize(),
     preloadSVGs([SvgAssets.backButton, SvgAssets.heart]),
   ]);
+
+  SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  firstTime = sharedPreferences.getBool('firstTime') ?? true;
+
   runApp(NewsApp(appRouter: AppRouter()));
 }
 
+bool firstTime = true;
 Future<void> preloadSVGs(List<String> svgPaths) async {
   for (final path in svgPaths) {
     final loader = SvgAssetLoader(path);
