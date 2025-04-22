@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/helpers/extensions.dart';
 import '../../../core/helpers/spacing.dart';
 import '../../../core/routers/routes.dart';
 import '../../../core/theme/text_styles.dart';
+import '../../../core/widgets/network_status_widget.dart';
 import '../../../core/widgets/pagination_dots.dart';
 import 'widgets/get_start_button.dart';
 import 'widgets/onboarding_image.dart';
@@ -54,18 +56,22 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   list: [0, 1, 2, 3],
                 ),
                 GetStartButton(
-                  onTap:
-                      () => setState(() {
-                        if (_currentIndex < 3) {
-                          _currentIndex += 1;
-                        } else {
-                          context.pushReplacementNamed(Routes.homeScreen);
-                        }
-                      }),
+                  onTap: () async {
+                    if (_currentIndex < 3) {
+                      _currentIndex += 1;
+                    } else {
+                      context.pushReplacementNamed(Routes.homeScreen);
+                      SharedPreferences sharedPreferences =
+                          await SharedPreferences.getInstance();
+                      await sharedPreferences.setBool('firstTime', false);
+                    }
+                    setState(() {});
+                  },
                 ),
               ],
             ),
           ),
+          NetworkStatusWidget(),
         ],
       ),
     );

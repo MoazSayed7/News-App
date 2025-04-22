@@ -65,7 +65,7 @@ class DetailsScreen extends StatelessWidget {
 
   Positioned _buildBackButton(BuildContext ctx) {
     return Positioned(
-      top: 21.h,
+      top: 40.h,
       left: 28.w,
       child: InkWell(
         splashColor: Colors.transparent,
@@ -77,7 +77,7 @@ class DetailsScreen extends StatelessWidget {
 
   Positioned _buildFavoriteButton(BuildContext context) {
     return Positioned(
-      top: 21.h,
+      top: 40.h,
       right: 28.95.w,
       child: InkWell(
         splashColor: Colors.transparent,
