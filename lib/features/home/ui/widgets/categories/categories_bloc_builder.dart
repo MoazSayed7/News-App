@@ -5,6 +5,7 @@ import '../../../data/models/categories_response_model.dart';
 import '../../../logic/home_cubit.dart';
 import '../../../logic/home_state.dart';
 import 'tap_bar.dart';
+import 'tap_bar_loading.dart';
 
 class CategoriesBlocBuilder extends StatefulWidget {
   const CategoriesBlocBuilder({super.key});
@@ -27,14 +28,15 @@ class _CategoriesBlocBuilderState extends State<CategoriesBlocBuilder> {
           categoriesSuccess: (categoriesResponseModel) {
             return setupSuccess(categoriesResponseModel);
           },
-          categoriesError: (error) => setupError(),
-          orElse: () => const SizedBox.shrink(),
+          orElse: () => setupLoading(),
         );
       },
     );
   }
 
-  Widget setupError() => const SizedBox.shrink();
+  Widget setupLoading() {
+    return ExactTabBarLoading();
+  }
 
   Widget setupSuccess(CategoriesResponseModel categoriesResponseModel) {
     return ExactTabBar(categories: categoriesResponseModel.data);

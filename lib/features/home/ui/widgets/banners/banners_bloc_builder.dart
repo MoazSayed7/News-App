@@ -5,6 +5,7 @@ import '../../../data/models/banner_response_model.dart';
 import '../../../logic/home_cubit.dart';
 import '../../../logic/home_state.dart';
 import 'image_carousel.dart';
+import 'image_carousel_loading.dart';
 
 class BannersBlocBuilder extends StatefulWidget {
   const BannersBlocBuilder({super.key});
@@ -27,14 +28,15 @@ class _BannersBlocBuilderState extends State<BannersBlocBuilder> {
           bannersSuccess: (bannerResponseModel) {
             return setupSuccess(bannerResponseModel);
           },
-          bannersError: (error) => setupError(),
-          orElse: () => const SizedBox.shrink(),
+          orElse: () => setupLoading(),
         );
       },
     );
   }
 
-  Widget setupError() => const SizedBox.shrink();
+  Widget setupLoading() {
+    return CarouselSliderPageLoading();
+  }
 
   Widget setupSuccess(BannerResponseModel bannerResponseModel) {
     return CarouselSliderPage(bannersList: bannerResponseModel.data);
