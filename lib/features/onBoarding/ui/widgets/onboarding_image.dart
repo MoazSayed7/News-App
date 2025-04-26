@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 
 class OnBoardingImage extends StatelessWidget {
   const OnBoardingImage({super.key});
@@ -24,13 +25,18 @@ class OnBoardingImage extends StatelessWidget {
               'https://images.pexels.com/photos/355321/pexels-photo-355321.jpeg',
           fit: BoxFit.cover,
           filterQuality: FilterQuality.high,
-          progressIndicatorBuilder:
-              (context, url, downloadProgress) => Center(
-                child: CircularProgressIndicator(
-                  value: downloadProgress.progress,
-                ),
+          placeholder:
+              (context, url) => Shimmer.fromColors(
+                baseColor: Colors.grey[800]!,
+                highlightColor: Colors.grey[600]!,
+                child: Container(color: Colors.white),
               ),
-          errorWidget: (context, url, error) => Icon(Icons.error),
+          errorWidget:
+              (context, url, error) => Shimmer.fromColors(
+                baseColor: Colors.grey[800]!,
+                highlightColor: Colors.grey[600]!,
+                child: Container(color: Colors.white),
+              ),
         ),
       ),
     );
