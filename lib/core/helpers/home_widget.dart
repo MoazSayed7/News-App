@@ -11,7 +11,9 @@ class HomeWidgetHelper {
   static const String dataKey = 'newsData';
   static Future<void> init() async {
     try {
-      await HomeWidget.setAppGroupId(appGroupID);
+      if (Platform.isIOS) {
+        await HomeWidget.setAppGroupId(appGroupID);
+      }
     } catch (e) {
       print('Error initializing HomeWidget: $e');
     }
@@ -40,10 +42,20 @@ class HomeWidgetHelper {
   }
 
   // Save the data to the widget
-  static Future saveToHomeWidget(List<String> imagePath) async {
+  static Future saveToHomeWidget(List<String> imagesPaths) async {
     try {
-      await HomeWidget.saveWidgetData(dataKey, imagePath);
-      await HomeWidget.updateWidget(iOSName: widgetName);
+      final String joinedStringImagesPaths = imagesPaths.join(
+        '||',
+      ); // Use a delimiter
+      if (Platform.isIOS) {
+        await HomeWidget.saveWidgetData(dataKey, imagesPaths);
+      } else {
+        await HomeWidget.saveWidgetData(dataKey, joinedStringImagesPaths);
+      }
+      await HomeWidget.updateWidget(
+        iOSName: widgetName,
+        androidName: widgetName,
+      );
     } catch (e) {
       print('Error saving to home widget: $e');
     }

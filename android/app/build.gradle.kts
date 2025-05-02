@@ -6,6 +6,10 @@ plugins {
 }
 
 android {
+    buildFeatures {
+        viewBinding = true
+    }
+
     namespace = "com.example.news_app_offline"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "27.0.12077973"
