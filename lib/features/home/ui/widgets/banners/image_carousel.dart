@@ -1,9 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
+import '../../../../../core/helpers/home_widget.dart';
+import '../../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../../core/theme/colors.dart';
 import '../../../../../core/theme/text_styles.dart';
 import '../../../../../core/widgets/pagination_dots.dart';
@@ -27,6 +30,10 @@ class BannerItem extends StatelessWidget {
   }
 
   Widget _buildImage() {
+    final imageUrl =
+        dataItem.id == 3
+            ? 'https://avatars.githubusercontent.com/u/75115429?v=4'
+            : dataItem.imageUrl;
     return Container(
       width: double.infinity,
       clipBehavior: Clip.antiAlias,
@@ -45,12 +52,29 @@ class BannerItem extends StatelessWidget {
             ).createShader(bounds),
         blendMode: BlendMode.srcATop,
         child: CachedNetworkImage(
-          imageUrl:
-              dataItem.id == 3
-                  ? 'https://avatars.githubusercontent.com/u/75115429?v=4'
-                  : dataItem.imageUrl,
+          imageUrl: imageUrl,
           fit: BoxFit.cover,
           filterQuality: FilterQuality.high,
+          imageBuilder: (context, imageProvider) {
+            WidgetsBinding.instance.addPostFrameCallback((_) async {
+              if (await SharedPrefHelper.getBool('dataAdded') != true) {
+                await DefaultCacheManager().getFileFromCache(imageUrl).then((
+                  file,
+                ) {
+                  if (file == null) {
+                    return;
+                  }
+                  debugPrint('File path: ${file.file.path}');
+                  _saveImagePathToHomeWidget(file.file.path);
+                });
+              }
+            });
+            return Image(
+              image: imageProvider,
+              fit: BoxFit.cover,
+              filterQuality: FilterQuality.high,
+            );
+          },
           placeholder:
               (context, url) => Shimmer.fromColors(
                 baseColor: Colors.grey[800]!,
@@ -113,6 +137,25 @@ class BannerItem extends StatelessWidget {
       ),
     );
   }
+
+  Future<void> _saveImagePathToHomeWidget(String path) async {
+    // Get the existing list of image Paths, or initialize an empty list
+    List<String> imagePaths =
+        await SharedPrefHelper.getStringList('newsData') ?? [];
+
+    // Check if the Path is already in the list to avoid duplicates
+    if (!imagePaths.contains(path)) {
+      imagePaths.add(path);
+      await SharedPrefHelper.setStringList('newsData', imagePaths);
+
+      // Check if the list length is 4
+      if (imagePaths.length == 4) {
+        print(imagePaths);
+        await HomeWidgetHelper.saveToHomeWidget(imagePaths);
+        await SharedPrefHelper.setBool('dataAdded', true);
+      }
+    }
+  }
 }
 
 // Main Carousel Slider Page
@@ -140,9 +183,7 @@ class _CarouselSliderPageState extends State<CarouselSliderPage> {
         autoPlay: _isPlayed,
         enlargeCenterPage: true,
         viewportFraction: 1,
-        onPageChanged: (index, reason) {
-          setState(() => _currentIndex = index);
-        },
+        onPageChanged: (index, reason) => setState(() => _currentIndex = index),
       ),
       items:
           widget.bannersList
