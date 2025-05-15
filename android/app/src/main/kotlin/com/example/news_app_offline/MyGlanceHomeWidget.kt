@@ -59,7 +59,7 @@ class MyGlanceHomeWidget : GlanceAppWidget() {
     private fun GlanceContent(context: Context, currentState: HomeWidgetGlanceState) {
         val prefs = currentState.preferences
         val newsData = prefs.getString("newsData", "") ?: ""
-        val imagesPaths = newsData.split("|").filter { it.isNotBlank() }
+        val imagesPaths = newsData.split("||").filter { it.isNotBlank() }
         if (imagesPaths.isNotEmpty()) {
             currentImageIndex = (currentImageIndex + 1) % imagesPaths.size
             val currentImagePath = imagesPaths[currentImageIndex]
