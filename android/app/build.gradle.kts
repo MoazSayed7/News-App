@@ -6,13 +6,17 @@ plugins {
 }
 
 android {
-    buildFeatures {
-        viewBinding = true
-    }
-
     namespace = "com.example.news_app_offline"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "27.0.12077973"
+
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.8"
+    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -45,4 +49,8 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    implementation("androidx.glance:glance-appwidget:1.1.1")
 }
